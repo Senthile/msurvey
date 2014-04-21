@@ -1,0 +1,31 @@
+var Questions = [
+  {
+    "id": "Test1",
+    "title": "What is your favourite color?",
+    "options": [
+      "[A] Red",
+      "[B] Green",
+      "[C] Blue",
+      "[D] White",
+      "[E] Black"
+    ]
+  },
+  {
+    "id": "Test2",
+    "title": "How do you spend time if you get a surprise day off?",
+    "options": [
+      "[A] Reading",
+      "[B] Playing",
+      "[C] Sleeping",
+      "[D] Party"
+    ]
+  },
+  {
+    "id": "Test3",
+    "title": "Do you really follow-up IPL T20 cricket?",
+    "options": [
+      "[A] Yes, I do.",
+      "[B] No, I am not."
+    ]
+  }  
+];

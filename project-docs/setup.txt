@@ -1,0 +1,5 @@
+npm install express - install express
+
+npm install consolidate - install consolidate
+
+npm install handlebars - install handlebars
