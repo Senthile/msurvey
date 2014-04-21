@@ -2,6 +2,9 @@ add the new files into git
 ---------------------------
 git add *
 git commit -m 'added the files'
+
+git remote set-url origin git@github.com:senthile/msurvey.git  -- for first time move from cloud9 project to github
+
 git push -u origin master
 
 
