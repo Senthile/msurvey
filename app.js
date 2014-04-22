@@ -23,12 +23,12 @@ app.configure(function() {
     app.use(app.router); //Explicitly add the router to errorHandler to work
     app.use(express.errorHandler());
     
-    app.use(express.logger(
+    /*app.use(express.logger(
         {
             format: 'default',
             stream: fs.createWriteStream('app.log', {'flags': 'a'}) 
         }
-    ));
+    ));*/
 
     app.engine('html', engines.handlebars);
     app.set('view engine', 'html');

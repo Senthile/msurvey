@@ -3,16 +3,16 @@ var Questions = [
     "id": "Test1",
     "title": "What is your favourite color?",
     "options": [
-      "[A] Red",
-      "[B] Green",
-      "[C] Blue",
-      "[D] White",
-      "[E] Black"
+      "[A] Blue",
+      "[B] Sky Blue",
+      "[C] Green",
+      "[D] Orange",
+      "[E] Red"
     ]
   },
   {
     "id": "Test2",
-    "title": "How do you spend time if you get a surprise day off?",
+    "title": "How do you spend your time if you get a surprise day off?",
     "options": [
       "[A] Reading",
       "[B] Playing",
