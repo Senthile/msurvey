@@ -1,24 +1,22 @@
 [
   {
+    "id": "Test1",
+    "vote": {
+      "Peiefuny47tpVoKctuUrT718": "A",
+      "4BBEgLkILuCKsBPqrfPM88oS": "E"
+    }
+  },
+  {
     "id": "Test2",
     "vote": {
-      "G4sGc9gFVQPEX0PwwBPzNP0h": "B",
-      "wh0Z8WxlpSAfkSkKMg9BTjr3": "C",
-      "dES4OWkS3PGj64qQVaB98SPG": "D"
+      "hPySGXxjyzswSw0QJD3A9mVY": "A"
     }
   },
   {
     "id": "Test3",
     "vote": {
-      "gAmEcYsi0fFFwM1LOdo8AFd2": "D",
-      "tThwnhkaAAVFsKvLsyQq0c5n": "E"
-    }
-  },
-  {
-    "id": "Test1",
-    "vote": {
-      "Peiefuny47tpVoKctuUrT718": "A",
-      "4BBEgLkILuCKsBPqrfPM88oS": "E"
+      "hPySGXxjyzswSw0QJD3A9mVY": "B",
+      "aZ8CBU0jAk7MB10Ksxns6Tb7": "A"
     }
   }
 ]

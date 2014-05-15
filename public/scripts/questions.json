@@ -12,20 +12,20 @@ var Questions = [
   },
   {
     "id": "Test2",
-    "title": "How do you spend your time if you get a surprise day off?",
+    "title": "",
     "options": [
-      "[A] Reading",
-      "[B] Playing",
-      "[C] Sleeping",
-      "[D] Party"
+      "[A] Option A",
+      "[B] Option B",
+      "[C] Option C",
+      "[D] Option D"
     ]
   },
   {
     "id": "Test3",
-    "title": "Do you really follow-up IPL T20 cricket?",
+    "title": "",
     "options": [
-      "[A] Yes, I do.",
-      "[B] No, I am not."
+      "[A] True",
+      "[B] False"
     ]
   }  
 ];
