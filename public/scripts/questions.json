@@ -1,31 +1,268 @@
 var Questions = [
   {
-    "id": "Test1",
-    "title": "What is your favourite color?",
+    "id": "Sample1",
+    "title": "Do you think the rupee will appreciate against on dollar on going forward?",
     "options": [
-      "[A] Blue",
-      "[B] Sky Blue",
-      "[C] Green",
-      "[D] Orange",
-      "[E] Red"
+      "[A] Yes",
+      "[B] No I don't think so"
     ]
   },
   {
-    "id": "Test2",
-    "title": "",
+    "id": "Sample2",
+    "title": "Where would you prefer to go for a summer vacation?",
     "options": [
-      "[A] Option A",
-      "[B] Option B",
-      "[C] Option C",
-      "[D] Option D"
+      "[A] Florida",
+      "[B] Main",
+      "[C] virginia",
+      "[D] No-where, Home only"
     ]
   },
   {
-    "id": "Test3",
+    "id": "Generic-1",
     "title": "",
     "options": [
-      "[A] True",
-      "[B] False"
+      "[A] Yes",
+      "[B] No"
     ]
-  }  
+  }, 
+  {
+    "id": "Generic-2",
+    "title": "",
+    "options": [
+      "[A] ",
+      "[B] ",
+      "[C] ",
+      "[D] "      
+    ]
+  },   
+  {
+    "id": "RoundOne-1",
+    "title": "If your auto policy states that your liability coverage figures are 100/300/100, what coverage does the last figure (100) represent? Note-First 100 is max per person, 300 is for per accident",
+    "options": [
+      "[A] Max amount that your insurance company will pay in personal injury claim",
+      "[B] Max amount that your insurance company will pay in comprehensive damage",
+      "[C] Max amount that per accident that your insurance company will pay for property damage",
+      "[D] Max amount that your insurance company will pay in collision damage"
+    ]
+  },
+  {
+    "id": "RoundOne-2",
+    "title": "A regression test",
+    "options": [
+      "[A] Will always be automated",
+      "[B] Will help ensure unchanged areas of the software have not been affected",
+      "[C] Will help ensure changed areas of the software have not been affected",
+      "[D] Can only be run during user acceptance testing"
+    ]
+  },
+  {
+    "id": "RoundOne-3",
+    "title": "Function/Test matrix is a type of",
+    "options": [
+      "[A] Interim Test report",
+      "[B] Final test report",
+      "[C] Project status report",
+      "[D] Management report"
+    ]
+  },
+  {
+    "id": "RoundOne-4",
+    "title": "A Claim handler is responsible for",
+    "options": [
+      "[A] To evaluate the claim",
+      "[B] To verify the coverage",
+      "[C] Negotiate and settlement",
+      "[D] All of above"
+    ]
+  },
+  {
+    "id": "RoundOne-5",
+    "title": "_______ is a written or printed untrue statement that damages the person's reputation",
+    "options": [
+      "[A] Assault",
+      "[B] Battery",
+      "[C] Libel",
+      "[D] Slander"
+    ]
+  },
+  {
+    "id": "RoundOne-6",
+    "title": "If you leave your job but decide to continue your health insurance benefits under COBRA, you will pay",
+    "options": [
+      "[A] Nothing for 18 months after leaving job",
+      "[B] Same premium you paid while employed",
+      "[C] The full cost of coverage",
+      "[D] None of above"
+    ]
+  },
+  {
+    "id": "RoundOne-7",
+    "title": "If personal item gets stolen from your car, what kind of insurance covers the loss?",
+    "options": [
+      "[A] Auto Insurance",
+      "[B] Renters/Home owners insurance",
+      "[C] Theft insurance",
+      "[D] Not covered"
+    ]
+  },
+  {
+    "id": "RoundOne-8",
+    "title": "Which if any, of the following best describes an Umbrella policy?",
+    "options": [
+      "[A] Additional coverage over and above your primary insurance policies",
+      "[B] One general policy for all types of insurance",
+      "[C] Coverage for “Acts of God” (earthquakes, tornados etc)",
+      "[D] Flood insurance coverage"
+    ]
+  },
+  {
+    "id": "RoundOne-9",
+    "title": "Which of the following statement is true in the context of Medicaid?",
+    "options": [
+      "[A] It is a federal govt. sponsored program",
+      "[B] It is governed by states",
+      "[C] It is for people after they retire",
+      "[D] None of above "
+    ]
+  },
+  {
+    "id": "RoundOne-10",
+    "title": "Amazon Web Services is which type of cloud computing distribution model",
+    "options": [
+      "[A] Software as a Service",
+      "[B] Platform as a Service",
+      "[C] Infrastructure as a Service",
+      "[D] Simple distribution cloud service "
+    ]
+  },
+  {
+    "id": "RoundOne-11",
+    "title": "What is the name of the organization helping to foster security standards for cloud computing?",
+    "options": [
+      "[A] Cloud Security Standards Working",
+      "[B] Cloud Security Alliance",
+      "[C] Cloud Security WatchDog",
+      "[D] Security in the Cloud Alliance"
+    ]
+  },
+  {
+    "id": "RoundOne-12",
+    "title": "Which process is applied to break down the project into smaller, more manageable elements?",
+    "options": [
+      "[A] Scope Planning",
+      "[B] Activity Duration Estimating",
+      "[C] Scope Definition",
+      "[D] Scope Verification"
+    ]
+  },
+  {
+    "id": "RoundOne-13",
+    "title": "Which of the following is not a static testing technique?",
+    "options": [
+      "[A] Error guessing",
+      "[B] Walkthrough",
+      "[C] Data flow analysis",
+      "[D] Inspections"
+    ]
+  },
+  {
+    "id": "RoundOne-14",
+    "title": "Swami has pet Tiger in the cage in his backyard. One day Tiger kills a neighbor. What type of liability this falls under?",
+    "options": [
+      "[A] Complete Negligence",
+      "[B] Intentional Liability",
+      "[C] Absolute Liability",
+      "[D] Special pet coverage negligence"
+    ]
+  } ,
+  {
+    "id": "RoundTwo-1",
+    "title": "What is the name of Android version 3.2? ",
+    "options": [
+    ]
+  } 
+   ,
+  {
+    "id": "RoundTwo-2",
+    "title": "What are the 4 stages of team development?",
+    "options": [
+      "[A] Forming, Storming, Norming, Performing",
+      "[B] Enthusiasm, Hope, Panic, Solution",
+      "[C] Assignment, Kickoff, Training, Communicating",
+      "[D] Direction, Motivation, Cooperation, Collaboration"
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-3",
+    "title": "What does the acronym RAM commonly stand for in project management?",
+    "options": [
+      "[A] Responsibility Assignment Matrix",
+      "[B] Remotely Applied Measurements",
+      "[C] Risk Aware Management",
+      "[D] Randomly Accessible Material"
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-4",
+    "title": "At what age, most people become eligible for Medicare?",
+    "options": [
+      "[A] 50",
+      "[B] 62",
+      "[C] 65",
+      "[D] One year after retirement"
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-5",
+    "title": "What is private cloud?",
+    "options": [
+      "[A] A standard cloud service offered via the Internet",
+      "[B] A cloud architecture maintained within an enterprise data center",
+      "[C] A cloud service inaccessible to anyone but the cultural elite",
+      "[D] A cloud architecture with password protection"
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-6",
+    "title": "Which of the following are not cost of quality?",
+    "options": [
+      "[A] Prevention costs",
+      "[B] Failure costs",
+      "[C] Transportation costs",
+      "[D] Appraisal costs"
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-7",
+    "title": "The objective of Rate Regulation of insurance is",
+    "options": [
+      "[A] To ensure that rates are inadequate",
+      "[B] To ensure that rates are not excessive  ",
+      "[C] To ensure that rates are fairly discriminatory  ",
+      "[D] All of above"
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-8",
+    "title": "When was cognizant founded?",
+    "options": [
+    ]
+  }
+   ,
+  {
+    "id": "RoundTwo-9",
+    "title": "What is converted into alcohol during brewing? ",
+    "options": [
+      "[A] Malt",
+      "[B] Water",
+      "[C] SUGAR",
+      "[D] None of above"
+    ]
+  }
 ];

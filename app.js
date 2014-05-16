@@ -70,7 +70,7 @@ app.post('/castVote', function(req, res) {
         message = "";
     
     if(option === 'T') {
-        message = "Test connection succeeded. You look good!!";
+        message = "Test connection succeeded. You look good for voting!!";
     } else {
         if(Survey.QID) {
             castVote(Survey.QID, option, clientIP)
