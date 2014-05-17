@@ -1,7 +1,7 @@
 var Questions = [
   {
     "id": "Sample1",
-    "title": "Do you think the rupee will appreciate against on dollar on going forward?",
+    "title": "Do you think that rupee will appreciate against dollar in the next 6 months?",
     "options": [
       "[A] Yes",
       "[B] No I don't think so"
@@ -9,12 +9,12 @@ var Questions = [
   },
   {
     "id": "Sample2",
-    "title": "Where would you prefer to go for a summer vacation?",
+    "title": "Where would you prefer to go for a long week-end?",
     "options": [
       "[A] Florida",
-      "[B] Main",
-      "[C] virginia",
-      "[D] No-where, Home only"
+      "[B] Maine",
+      "[C] Virginia",
+      "[D] Stay at home"
     ]
   },
   {
@@ -37,7 +37,7 @@ var Questions = [
   },   
   {
     "id": "RoundOne-1",
-    "title": "If your auto policy states that your liability coverage figures are 100/300/100, what coverage does the last figure (100) represent? Note-First 100 is max per person, 300 is for per accident",
+    "title": "If your auto policy states that your liability coverage figures are 100/300/100, what coverage does the last figure (100) represent?",
     "options": [
       "[A] Max amount that your insurance company will pay in personal injury claim",
       "[B] Max amount that your insurance company will pay in comprehensive damage",
@@ -47,7 +47,7 @@ var Questions = [
   },
   {
     "id": "RoundOne-2",
-    "title": "A regression test",
+    "title": "A regression test:",
     "options": [
       "[A] Will always be automated",
       "[B] Will help ensure unchanged areas of the software have not been affected",
@@ -57,7 +57,7 @@ var Questions = [
   },
   {
     "id": "RoundOne-3",
-    "title": "Function/Test matrix is a type of",
+    "title": "Function/Test matrix is a type of -",
     "options": [
       "[A] Interim Test report",
       "[B] Final test report",
@@ -67,7 +67,7 @@ var Questions = [
   },
   {
     "id": "RoundOne-4",
-    "title": "A Claim handler is responsible for",
+    "title": "A Claim handler is responsible for -",
     "options": [
       "[A] To evaluate the claim",
       "[B] To verify the coverage",
@@ -147,12 +147,12 @@ var Questions = [
   },
   {
     "id": "RoundOne-12",
-    "title": "Which process is applied to break down the project into smaller, more manageable elements?",
+    "title": "A burn-down chart shows - ",
     "options": [
-      "[A] Scope Planning",
-      "[B] Activity Duration Estimating",
-      "[C] Scope Definition",
-      "[D] Scope Verification"
+      "[A] The energy level and velocity of the team",
+      "[B] The remaining work (effort, points) to complete before the iteration (time box) end",
+      "[C] The number of hours worked by each team member during the iteration (time box)",
+      "[D] The rate of spending of the budget for a project"
     ]
   },
   {
@@ -208,10 +208,6 @@ var Questions = [
     "id": "RoundTwo-4",
     "title": "At what age, most people become eligible for Medicare?",
     "options": [
-      "[A] 50",
-      "[B] 62",
-      "[C] 65",
-      "[D] One year after retirement"
     ]
   }
    ,
@@ -250,7 +246,7 @@ var Questions = [
    ,
   {
     "id": "RoundTwo-8",
-    "title": "When was cognizant founded?",
+    "title": "When was cognizant formed?",
     "options": [
     ]
   }
