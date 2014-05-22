@@ -1,13 +1,56 @@
-﻿var App = angular.module('App', []);
+$(document).ready(function () {
+
+    var input = document.createElement('input');
+    input.setAttribute('type', 'range');
+
+    //range not supported browser
+    if (input.type === "text") {
+        $('#boaringDisplay').hide();
+        $('#dispFallback').show();
+    } else {
+        $('#boaringDisplay').show();
+        $('#dispFallback').hide();
+    }
+
+    var sendBoaringLevel = function() {
+        var scope = $('#boaringRange').scope();
+        scope.sendBoaringLevel();
+
+        window.setTimeout(sendBoaringLevel, 3000);
+    };
+
+    var reduceBoaringLevel = function () {
+        var $ctrlRange = $('#boaringRange'),
+            scope = $ctrlRange.scope();
+
+        scope.boaringLevel = parseInt(scope.boaringLevel) || 1;
+        scope.boaringLevel = scope.boaringLevel > 100 ? 100 : scope.boaringLevel;
+
+        if (scope.boaringLevel > 0) {
+            scope.boaringLevel -= 1;
+        }
+        $ctrlRange.val(input.type === "text" && !scope.boaringLevel ? "" : scope.boaringLevel);
+        $ctrlRange.change();
+
+        window.setTimeout(reduceBoaringLevel, 5000);
+    };
+
+    sendBoaringLevel();
+    reduceBoaringLevel();
+});
+
+
+
+var App = angular.module('App', []);
 
 App.controller('voteMachineCtrl', function ($scope, $http) {
     $scope.loading = false;
+    $scope.boaringLevel = 0;
+    
     $scope.castVote = function (option) {
         $scope.loading = true;
 
         var data = {};
-        //data.clientIP = APP_CLIENT_IP;
-        data.clientIP = "MAC_ADDRESS";
         data.option = option;
 
         $http({
@@ -24,6 +67,13 @@ App.controller('voteMachineCtrl', function ($scope, $http) {
             $scope.loading = false;
         });
     }
+    
+
+    $scope.sendBoaringLevel = function () {
+        $scope.boaringLevel = parseInt($scope.boaringLevel) || 1;
+        console.log($scope.boaringLevel);
+    }
+   
 
     $scope.$on('message', function (event, message, isError) {
         if (message) {

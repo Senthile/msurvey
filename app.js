@@ -40,6 +40,10 @@ app.get('/',function(req, res){
     res.render("login");
 });
 
+app.get('/vote',function(req, res){
+    res.redirect('/public/vote.html');
+});
+
 app.post('/',function(req, res){
     var user = req.body.username,
         password = req.body.password;
@@ -54,7 +58,6 @@ app.post('/',function(req, res){
         res.render("login");
     }
 });
-
 
 app.get('/logout', function (req, res) {
     req.session.destroy(function () {
