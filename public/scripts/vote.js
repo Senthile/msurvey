@@ -1,44 +1,50 @@
-$(document).ready(function () {
+function getAndroidVersion(ua) {
+    var ua = navigator.userAgent;
+    var match = ua && ua.match(/Android\s([0-9\.]*)/);
+    return match ? match[1] : false;
+};
 
+
+$(document).ready(function () {
     var input = document.createElement('input');
     input.setAttribute('type', 'range');
 
-    //range not supported browser
-    if (input.type === "text") {
-        $('#boaringDisplay').hide();
-        $('#dispFallback').show();
-    } else {
-        $('#boaringDisplay').show();
-        $('#dispFallback').hide();
-    }
-
     var sendBoaringLevel = function() {
-        var scope = $('#boaringRange').scope();
+        var scope = $('body').scope();
         scope.sendBoaringLevel();
 
         window.setTimeout(sendBoaringLevel, 3000);
     };
 
     var reduceBoaringLevel = function () {
-        var $ctrlRange = $('#boaringRange'),
-            scope = $ctrlRange.scope();
+        var $boaringRange = $('#boaringRange'),
+            $boaringSelect = $('#boaringSelect'),
+            $range = $('#rangeGroup'),
+            $select = $('#selectGroup'),
+            scope = $("body").scope();
 
-        scope.boaringLevel = parseInt(scope.boaringLevel) || 1;
+        scope.boaringLevel = parseInt(scope.boaringLevel) || 0;
         scope.boaringLevel = scope.boaringLevel > 100 ? 100 : scope.boaringLevel;
 
-        if (scope.boaringLevel > 0) {
-            scope.boaringLevel -= 1;
+        if (scope.boaringLevel > 4) {
+            scope.boaringLevel -= 5;
         }
-        $ctrlRange.val(input.type === "text" && !scope.boaringLevel ? "" : scope.boaringLevel);
-        $ctrlRange.change();
 
+        //range supported browser
+        if (input.type === "range" && (!getAndroidVersion() || parseFloat(getAndroidVersion()) > 4.1 )) {
+            $select.remove();
+            $boaringRange.val(scope.boaringLevel);
+            $boaringRange.change();
+        } else {
+            $range.remove();
+            $boaringSelect.val(scope.boaringLevel);
+        }
         window.setTimeout(reduceBoaringLevel, 5000);
     };
 
     sendBoaringLevel();
     reduceBoaringLevel();
 });
-
 
 
 var App = angular.module('App', []);
@@ -70,7 +76,7 @@ App.controller('voteMachineCtrl', function ($scope, $http) {
     
 
     $scope.sendBoaringLevel = function () {
-        $scope.boaringLevel = parseInt($scope.boaringLevel) || 1;
+        $scope.boaringLevel = parseInt($scope.boaringLevel) || 0;
         console.log($scope.boaringLevel);
     }
    

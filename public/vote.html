@@ -11,7 +11,7 @@
         body
         {
             overflow-x: hidden;
-            background: #FFF8DC;
+            background: #FFFFCC;
         }
         
         img
@@ -90,13 +90,28 @@
                     </div>
                 </div>
             </div>
-            <div class="row-fluid">
+            <div class="row-fluid" id="rangeGroup">
                 <div class="span12">
                     <div align="center" class="input-append" style="margin-top: 1em;">
-                        <input id="boaringRange" type="range" name="points" min="0" max="100" step="1" size="100" ng-model="boaringLevel">
-                         <label style="display:inline;">&nbsp;&nbsp;&nbsp;</label>
-                        <label style="display:inline;margin-right: 1em;" id="boaringDisplay" >{{boaringLevel}}%</label>
-                        <label style="display:inline;margin-right: 1em;" id="dispFallback" >%</label>
+                        <input id="boaringRange" style="padding-left: 1em; padding-right: 1em;" type="range"
+                            name="points" min="0" max="100" step="5" size="100" ng-model="boaringLevel">
+                        <label style="display: inline;">
+                            &nbsp;&nbsp;&nbsp;</label>
+                        <label style="display: inline;" id="boaringDisplay">
+                            {{boaringLevel}}%</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid" id="selectGroup">
+                <div class="span12">
+                    <div align="center" class="input-append" style="margin-top: 1em;">
+                        <select id="boaringSelect"  ng-model="boaringLevel">
+                            <option value="0">0%</option>
+                            <option value="5">5%</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                        </select>
                     </div>
                 </div>
             </div>           
