@@ -7,9 +7,10 @@ var express = require("express"),
 var app = express();
 
 global.Survey = {};
+global.Barometer = {};
 
 app.configure(function() {
-    app.set('title', 'M-Survey');
+    app.set('title', 'CTS-Polling');
     
     app.set('views', __dirname + '/views');
     app.use(express.static( __dirname + '/public'));
@@ -123,6 +124,40 @@ app.post('/getSurveyResults', function(req, res) {
     //res.end(JSON.stringify(question));
 });
 
+
+app.post('/startBarometer', function(req, res) { 
+    Barometer.isActive = true;
+    resetBarometer();
+    res.send("success"); 
+});
+
+app.post('/closeBarometer', function(req, res) { 
+    Barometer.isActive = false;
+    resetBarometer();
+    res.send("success"); 
+});
+
+app.post('/updateBoaringLevel', function(req, res) { 
+    if(Barometer.isActive) {
+        var obj = req.body,    
+        clientId = req.sessionID,
+        boaringLevel = obj.boaringLevel;
+        
+        updateBoaringLevel(clientId,boaringLevel);
+        res.send("success"); 
+    } else {
+        res.send("fail"); 
+    }
+});
+
+app.post('/getBoaringLevel', function(req, res) { 
+    var percent = 0;
+    if(Barometer.isActive) {
+        percent = getBoaringLevel();
+    }
+    res.send(percent); 
+});
+
 var getQuestion = function(questionId) {
     var question;
     for(var i=0, len = Survey.Result.length; i<len; i++) {
@@ -174,6 +209,46 @@ var resetSurvey = function() {
     }
     Survey.QID = null;
     Survey.Result.PollCount = 0;    
+};
+
+var resetBarometer = function() {
+    Barometer.Result = [];
+};
+
+var getBoaringResult = function(clientId) {
+    var result;
+    for(var i=0, len = Barometer.Result.length; i<len; i++) {
+        result = Barometer.Result[i];
+        if(result.id === clientId) {
+            return result;
+        }
+    } 
+};
+
+var updateBoaringLevel = function(clientId, val) {
+    var result = getBoaringResult(clientId);
+    if (!result) {
+        result = {};
+        result.id = clientId;
+        result.boaringLevel = 0;
+
+        Barometer.Result.push(result);
+        result = Barometer.Result[Barometer.Result.length - 1];
+    }
+    result.boaringLevel = val > 100 ? 100 : val;
+};
+
+var getBoaringLevel = function() {
+    var total = 0, result, percentResult;
+    
+    if(!Barometer.Result.length) { return 0; };
+    
+    for(var i=0, len = Barometer.Result.length; i<len; i++) {
+        result = Barometer.Result[i];
+        total += result.boaringLevel;
+    }
+    percentResult = total/Barometer.Result.length;
+    return percentResult;
 };
 
 app.listen(process.env.PORT);

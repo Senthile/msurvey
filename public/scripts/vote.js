@@ -13,7 +13,7 @@ $(document).ready(function () {
         var scope = $('body').scope();
         scope.sendBoaringLevel();
 
-        window.setTimeout(sendBoaringLevel, 3000);
+        window.setTimeout(sendBoaringLevel, 10000);
     };
 
     var reduceBoaringLevel = function () {
@@ -39,7 +39,7 @@ $(document).ready(function () {
             $range.remove();
             $boaringSelect.val(scope.boaringLevel);
         }
-        window.setTimeout(reduceBoaringLevel, 5000);
+        window.setTimeout(reduceBoaringLevel, 30000);
     };
 
     sendBoaringLevel();
@@ -55,10 +55,8 @@ App.controller('voteMachineCtrl', function ($scope, $http) {
     
     $scope.castVote = function (option) {
         $scope.loading = true;
-
         var data = {};
         data.option = option;
-
         $http({
             url: '/castVote',
             method: "POST",
@@ -77,6 +75,17 @@ App.controller('voteMachineCtrl', function ($scope, $http) {
 
     $scope.sendBoaringLevel = function () {
         $scope.boaringLevel = parseInt($scope.boaringLevel) || 0;
+        
+        var data = {};
+        data.boaringLevel = $scope.boaringLevel;
+        $http({
+            url: '/updateBoaringLevel',
+            method: "POST",
+            data: data,
+            headers: { 'Content-Type': "application/json; charset=utf-8" }
+        }).success(function (data, status, headers, config) {
+        }).error(function (data, status, headers, config) {
+        });
         console.log($scope.boaringLevel);
     }
    
