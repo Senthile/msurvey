@@ -31,7 +31,7 @@ $(document).ready(function () {
         }
 
         //range supported browser
-        if (input.type === "range" && (!getAndroidVersion() || parseFloat(getAndroidVersion()) > 4.0 )) {
+        if (input.type === "range" && (!getAndroidVersion() || parseFloat(getAndroidVersion()) > 4.1 )) {
             $select.remove();
             $boaringRange.val(scope.boaringLevel);
             $boaringRange.change();
