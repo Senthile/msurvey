@@ -125,13 +125,13 @@ app.post('/getSurveyResults', function(req, res) {
 });
 
 
-app.post('/startBarometer', function(req, res) { 
+app.get('/startBarometer', function(req, res) { 
     Barometer.isActive = true;
     resetBarometer();
     res.send("success"); 
 });
 
-app.post('/closeBarometer', function(req, res) { 
+app.get('/closeBarometer', function(req, res) { 
     Barometer.isActive = false;
     resetBarometer();
     res.send("success"); 
@@ -150,7 +150,7 @@ app.post('/updateBoaringLevel', function(req, res) {
     }
 });
 
-app.post('/getBoaringLevel', function(req, res) { 
+app.get('/getBoaringLevel', function(req, res) { 
     var percent = 0;
     if(Barometer.isActive) {
         percent = getBoaringLevel();
