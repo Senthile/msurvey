@@ -155,7 +155,7 @@ app.get('/getBoaringLevel', function(req, res) {
     if(Barometer.isActive) {
         percent = getBoaringLevel();
     }
-    res.send(percent); 
+    res.send(percent.toString()); 
 });
 
 var getQuestion = function(questionId) {
